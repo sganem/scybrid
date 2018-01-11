@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Demo Page implementation -->
+    <script src="/scripts/demo.js"></script>
+    <script src="/scripts/gtag-events.js"></script>
+    <script src="/scripts/ga.js"></script>
+    <!-- End Demo Page implementation -->
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106123012-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag()
+      {
+        if (window.AnalyticsWebInterface)
+        {
+          window.AnalyticsWebInterface.process(JSON.stringify(arguments));
+        }
+        else
+        {
+          dataLayer.push(arguments)
+        }
+      };
+      gtag('js', new Date());
+
+      // Initialize demo page - Not required for implementation
+      tagDemo.init();
+
+      gtag('config', 'UA-106123012-2', {
+        "custom_map": {
+          "dimension1": "color",
+          "dimension22": "size"
+        }
+      });
+    </script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Global Site Tag (gtag.js) - Google Analytics</title>
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic&subset=cyrillic,cyrillic-ext,latin,greek,latin-ext,vietnamese">
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css" media="screen" />
+  </head>
+  <body>
+    <div class="top-nav">
+      <a href="/">
+        <div class="gtag-logo"></div>
+        <div class="gtag-title">Global Site Tag (gtag.js)</div>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="title logo logo--analytics">Google Analytics</div>
+      <div class="subcard-holder">
+        <div class="subcard">
+          <div class="subhead">
+            Browse through examples of suggested events and parameters for the gtag.js API
+          </div>
+          <ul class="event-list">
+            <li><a class="btn" href="javascript:ogt.ga.customEvent();">Custom Event</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.customEventOverrideFields();">Custom Overrides</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.customEventCustomDimension();">Custom Dimension</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.eecImpression();">EEC Impression</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.eecClick();">EEC Click</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.eecAddToCart();">EEC Add To Cart</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.eecBeginCheckout();">EEC Begin Checkout</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.eecPurchase();">EEC Purchase</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.eecViewPromotion();">EEC View Promotion</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.eecClickPromotion();">EEC Click Promotion</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.timing();">Timing</a></li>
+            <li><a class="btn" href="javascript:ogt.ga.exception();">Exception</a></li>
+          </ul>
+          <div class="card-footer">
+            <label><input id="ogt_ga" type="checkbox">Include event level routing</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="logWindow" class="card">
+      <div class="title">gtag.js code</div>
+      <div class="subcard-holder">
+        <div class="subcard">
+          <div class="subhead">
+            Sample code executed on the page
+          </div>
+          <div class="small-btn small-btn--download"
+               title="Download"
+               onclick="tagDemo.download('#eventCode', 'event_snippet')"></div>
+          <div class="small-btn small-btn--copy"
+               title="Copy to clipboard"
+               onclick="tagDemo.copyToClipboard('#eventCode')"></div>
+          <textarea readonly tabindex="-1" id="eventCode"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="/">home</a>
+      •
+      <a href="https://goo.gl/forms/72XCzrOwYxLR3loc2" target="_blank">send feedback</a>
+    </div>
+  </body>
+</html>

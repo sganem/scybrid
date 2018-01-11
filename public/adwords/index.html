@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Demo Page implementation -->
+    <script src="/scripts/demo.js"></script>
+    <script src="/scripts/aw.js"></script>
+    <!-- End Demo Page implementation -->
+
+    <!-- Global Site Tag (gtag.js) - Google AdWords -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-953774234"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag()
+      {
+        if (window.AnalyticsWebInterface)
+        {
+          window.AnalyticsWebInterface.process(JSON.stringify(arguments));
+        }
+        else
+        {
+          dataLayer.push(arguments)
+        }
+      };
+      gtag('js', new Date());
+
+      // Initialize demo page - Not required for implementation
+      tagDemo.init();
+
+      gtag('config', 'AW-953774234');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Global Site Tag (gtag.js) - AdWords</title>
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic&subset=cyrillic,cyrillic-ext,latin,greek,latin-ext,vietnamese">
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css" media="screen" />
+  </head>
+  <body>
+    <div class="top-nav">
+      <a href="/">
+        <div class="gtag-logo"></div>
+        <div class="gtag-title">Global Site Tag (gtag.js)</div>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="title logo logo--adwords">AdWords</div>
+      <div class="subcard-holder">
+        <div class="subcard">
+          <div class="subhead">
+            Browse through examples of suggested events and parameters for the gtag.js API
+            <br />
+            <b>Conversion Tracking</b>
+          </div>
+          <ul class="event-list">
+            <li><a class="btn" href="javascript:ogt.aw.conversion.website();">Website Conversion</a></li>
+          </ul>
+          <div class="subhead">
+            <b>Remarketing</b>
+            <br />
+            Note: A default remarketing hit is automatically sent when configuring AdWords using
+            the 'config' command.
+          </div>
+          <ul class="event-list">
+            <li><a class="btn" href="javascript:ogt.aw.remarketing.static();">Remarketing</a></li>
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.customParameters();">
+                Custom parameters
+              </a>
+            </li>
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.tagBasedAudience();">
+                Tag-based audience
+              </a>
+            </li>
+          </ul>
+          <div class="subhead">
+            <b>Dynamic Remarketing</b>
+          </div>
+          <ul class="event-list">
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.dynamic.education();">Education</a>
+            </li>
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.dynamic.flights();">Flights</a>
+              </li>
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.dynamic.hotels();">Hotels and rentals</a>
+              </li>
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.dynamic.jobs();">Jobs</a>
+              </li>
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.dynamic.local();">Local deals</a>
+              </li>
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.dynamic.real_estate();">Real estate</a>
+              </li>
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.dynamic.retail();">Retail</a>
+              </li>
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.dynamic.travel();">Travel</a>
+              </li>
+            <li>
+              <a class="btn" href="javascript:ogt.aw.remarketing.dynamic.custom();">Custom (other)</a>
+            </li>
+          </ul>
+          <div class="card-footer">
+
+            <label><input id="ogt_event_routing" type="checkbox">Include event level routing</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="logWindow" class="card">
+      <div class="title">gtag.js code</div>
+      <div class="subcard-holder">
+        <div class="subcard">
+          <div class="subhead">
+            Sample code executed on the page
+          </div>
+          <div class="small-btn small-btn--download"
+               title="Download"
+               onclick="tagDemo.download('#eventCode', 'event_snippet')"></div>
+          <div class="small-btn small-btn--copy"
+               title="Copy to clipboard"
+               onclick="tagDemo.copyToClipboard('#eventCode')"></div>
+          <textarea readonly tabindex="-1" id="eventCode"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="/">home</a>
+      •
+      <a href="https://goo.gl/forms/72XCzrOwYxLR3loc2" target="_blank">send feedback</a>
+    </div>
+  </body>
+</html>

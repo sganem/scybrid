@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1092516139570",
+    "firebase_url": "https://scybrid-b9459.firebaseio.com",
+    "project_id": "scybrid-b9459",
+    "storage_bucket": "scybrid-b9459.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092516139570:android:817f487a6e1dc315",
+        "android_client_info": {
+          "package_name": "com.sganem.scybrid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092516139570-u6uc29ss2vd5i4uuntah53ss3lbd21dm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sganem.scybrid",
+            "certificate_hash": "af96bccfe308ba9042ef4721501b12c28be59405"
+          }
+        },
+        {
+          "client_id": "1092516139570-4jkoah90c3lh8180cj6ahjngnpreslrh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4CfZnhuCpZ1LSSTqE8MWRAk9TSnE7gEs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092516139570-4jkoah90c3lh8180cj6ahjngnpreslrh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

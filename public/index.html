@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Demo Page implementation -->
+  <script src="/scripts/demo.js"></script>
+  <!-- End Demo Page implementation -->
+
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55560926-34"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      //function gtag(){dataLayer.push(arguments);}
+      function gtag()
+      {
+        if (window.AnalyticsWebInterface) {
+          //window.AnalyticsWebInterface.process(JSON.stringify(arguments));
+          if( arguments[0] == 'event' ) {
+            if( arguments.length >= 2 ) {
+              // arguments[2] can be null (i.e. no parameters)
+              window.AnalyticsWebInterface.logEvent( arguments[1], JSON.stringify( arguments[2] ));
+            }
+          }
+          else if( arguments[0] == 'set' ) {
+            if( typeof arguments[1] == 'object' ) {
+              var userProperties = arguments[1];
+              for (var key in userProperties) {
+                window.AnalyticsWebInterface.setUserProperty( key, userProperties[key] );
+              }
+            }
+            else
+            {
+              // arguments[2] can be null (i.e. reset the user property value by passing in null)
+              window.AnalyticsWebInterface.setUserProperty( arguments[1], arguments[2] );
+            }
+          }
+        }
+        else
+        {
+          dataLayer.push(arguments)
+        }
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-55560926-34');
+    </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Global Site Tag (gtag.js)</title>
+
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic&subset=cyrillic,cyrillic-ext,latin,greek,latin-ext,vietnamese">
+  <link rel="stylesheet" type="text/css" href="/assets/styles.css" media="screen" />
+</head>
+<body class="animation">
+<div class="top-nav">
+  <a href="/">
+    <div class="gtag-logo"></div>
+    <div class="gtag-title">Global Site Tag (gtag.js)</div>
+  </a>
+</div>
+
+<div class="card">
+  <div class="title">Event &amp; parameter reference</div>
+  <div class="subcard-holder">
+    <div class="subcard">
+      <div class="subhead">
+        Browse through examples of suggested events and parameters for the gtag.js API
+      </div>
+      <ul class="product-list">
+        <li class="product">
+          <a href="javascript:tagDemo.navigate('gtag-events')">
+            <span class="logo logo--event">gtag.js event reference</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="title">Product examples</div>
+  <div class="subcard-holder">
+    <div class="subcard">
+      <div class="subhead">
+        Browse implementation examples and demos
+      </div>
+      <ul class="product-list">
+        <li class="product product--analytics">
+          <a href="javascript:tagDemo.navigate('google-analytics');">
+            <span class="logo logo--analytics">Google Analytics</span>
+          </a>
+        </li>
+        <li class="product product--adwords">
+          <a href="javascript:tagDemo.navigate('adwords');">
+            <span class="logo logo--adwords">AdWords</span>
+          </a>
+        </li>
+        <li class="product product--doubleclick">
+          <a href="javascript:tagDemo.navigate('doubleclick');">
+            <span class="logo logo--doubleclick">DoubleClick</span>
+          </a>
+        </li>
+        <li class="product product--gtm">
+          <a href="javascript:tagDemo.navigate('gtm');">
+            <span class="logo logo--gtm">Google Tag Manager</span>
+          </a>
+        </li>
+        <li class="product product--analytics-adwords">
+          <a href="javascript:tagDemo.navigate('analytics-adwords');">
+            <div class="icon-container">
+              <span class="icon analytics-icon">Google Analytics</span>
+              <span class="plus">+</span>
+              <span class="icon adwords-icon">AdWords</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card additional-content card--offscreen">
+  <div class="title">Additional testing</div>
+  <div class="subcard-holder">
+    <div class="subcard">
+      <div class="subhead">
+        Additional testing scenarios
+      </div>
+      <ul class="product-list">
+        <li class="product">
+          <a class="btn" href="javascript:tagDemo.navigate('iframe-test.html')">iframe test</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="/">home</a>
+  •
+  <a href="https://goo.gl/forms/72XCzrOwYxLR3loc2" target="_blank">send feedback</a>
+</div>
+
+<div class="additional-actions">
+  <a href="javascript:tagDemo.showAdditionalTests();">π</a>
+</div>
+</body>
+</html>

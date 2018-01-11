@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Demo Page implementation -->
+    <script src="/scripts/demo.js"></script>
+    <script src="/scripts/gtag-events.js"></script>
+    <script src="/scripts/ga.js"></script>
+    <script src="/scripts/aw.js"></script>
+    <script src="/scripts/dc.js"></script>
+    <!-- End Demo Page implementation -->
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <!-- Broken gravity tracking code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106123012-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+	  function gtag()
+      {
+        if (window.AnalyticsWebInterface) {
+          //window.AnalyticsWebInterface.process(JSON.stringify(arguments));
+          if( arguments[0] == 'event' ) {
+            if( arguments.length >= 2 ) {
+              // arguments[2] can be null (i.e. no parameters)
+              window.AnalyticsWebInterface.logEvent( arguments[1], JSON.stringify( arguments[2] ));
+            }
+          }
+          else if( arguments[0] == 'set' ) {
+            if( typeof arguments[1] == 'object' ) {
+              var userProperties = arguments[1];
+              for (var key in userProperties) {
+                window.AnalyticsWebInterface.setUserProperty( key, userProperties[key] );
+              }
+            }
+            else
+            {
+              // arguments[2] can be null (i.e. reset the user property value by passing in null)
+              window.AnalyticsWebInterface.setUserProperty( arguments[1], arguments[2] );
+            }
+          }
+        }
+        else
+        {
+          dataLayer.push(arguments)
+        }
+      };
+      gtag('js', new Date());
+      gtag('event', 'page_view', {'send_to': 'UA-106123012-1'});
+    </script>
+
+
+    <!-- Demo page -->
+    <script>
+      // Initialize demo page
+      tagDemo.init();
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Global Site Tag (gtag.js) - Event reference</title>
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic&subset=cyrillic,cyrillic-ext,latin,greek,latin-ext,vietnamese">
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css" media="screen" />
+  </head>
+  <body>
+    <div class="top-nav">
+      <a href="/">
+        <div class="gtag-logo"></div>
+        <div class="gtag-title">Global Site Tag (gtag.js)</div>
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="title logo logo--event">gtag.js event reference</div>
+      <div class="subcard-holder">
+        <div class="subcard">
+          <div class="subhead">
+            Browse through examples of suggested events and parameters for the gtag.js API
+          </div>
+          <ul class="event-list">
+            <li><a class="btn" href="javascript:ogt.addPaymentInfo();">add_payment_info</a></li>
+            <li><a class="btn" href="javascript:ogt.addToCart();">add_to_cart</a></li>
+            <li><a class="btn" href="javascript:ogt.addToWishlist();">add_to_wishlist</a></li>
+            <li><a class="btn" href="javascript:ogt.beginCheckout();">begin_checkout</a></li>
+            <li><a class="btn" href="javascript:ogt.checkoutProgress();">checkout_progress</a></li>
+            <li><a class="btn" href="javascript:ogt.exception();">exception</a></li>
+            <li><a class="btn" href="javascript:ogt.generateLead();">generate_lead</a></li>
+            <li><a class="btn" href="javascript:ogt.login();">login</a></li>
+            <li><a class="btn" href="javascript:ogt.pageView();">page_view</a></li>
+            <li><a class="btn" href="javascript:ogt.purchase();">purchase</a></li>
+            <li><a class="btn" href="javascript:ogt.refund();">refund</a></li>
+            <li><a class="btn" href="javascript:ogt.removeFromCart();">remove_from_cart</a></li>
+            <li><a class="btn" href="javascript:ogt.search();">search</a></li>
+            <li><a class="btn" href="javascript:ogt.selectContent();">select_content</a></li>
+            <li><a class="btn" href="javascript:ogt.selectContentProduct();">select_product</a></li>
+            <li><a class="btn" href="javascript:ogt.selectContentPromotion();">select_promotion</a></li>
+            <li><a class="btn" href="javascript:ogt.setCheckoutOption();">set_checkout_option</a></li>
+            <li><a class="btn" href="javascript:ogt.share();">share</a></li>
+            <li><a class="btn" href="javascript:ogt.signUp();">sign_up</a></li>
+            <li><a class="btn" href="javascript:ogt.timingComplete();">timing_complete</a></li>
+            <li><a class="btn" href="javascript:ogt.viewItem();">view_item</a></li>
+            <li><a class="btn" href="javascript:ogt.viewItemList();">view_item_list</a></li>
+            <li><a class="btn" href="javascript:ogt.viewPromotion();">view_promotion</a></li>
+            <li><a class="btn" href="javascript:ogt.viewSearchResults();">view_search_results</a></li>
+            <li><a class="btn" href="javascript:ogt.customEvent();">[CUSTOM EVENT]</a></li>
+          </ul>
+          <div class="card-footer">
+            <b>Add product routing</b><br />
+            <label>
+              <input id="ogt_ga" type="checkbox" name="product" />
+              Google Analytics
+            </label>
+
+            <label>
+              <input id="ogt_awct" type="checkbox" name="product" />
+              AdWords Conversion Tracking
+            </label>
+
+            <label>
+              <input id="ogt_awrmkt" type="checkbox" name="product" />
+              AdWords Remarketing
+            </label>
+
+            <label>
+              <input id="ogt_dc" type="checkbox" name="product" />
+              DoubleClick
+            </label>
+
+            <label>
+              <input id="ogt_event_default" type="checkbox" name="product" />
+              Default routing group
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="logWindow" class="card">
+      <div class="title">gtag.js code</div>
+      <div class="subcard-holder">
+        <div class="subcard">
+          <div class="subhead">
+            Sample code executed on the page
+          </div>
+          <div class="small-btn small-btn--download"
+               title="Download"
+               onclick="tagDemo.download('#eventCode', 'event_snippet')"></div>
+          <div class="small-btn small-btn--copy"
+               title="Copy to clipboard"
+               onclick="tagDemo.copyToClipboard('#eventCode')"></div>
+          <textarea readonly tabindex="-1" id="eventCode"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="/">home</a>
+      •
+      <a href="https://goo.gl/forms/72XCzrOwYxLR3loc2" target="_blank">send feedback</a>
+    </div>
+    
+  </body>
+</html>

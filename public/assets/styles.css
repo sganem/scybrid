@@ -1,0 +1,430 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #eee;
+  color: rgba(0, 0, 0, .87);
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.top-nav {
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14),
+      0 2px 10px -1px rgba(0, 0, 0, .12);
+  height: 64px;
+}
+
+.top-nav a {
+  text-decoration: none;
+}
+.gtag-logo {
+  background-image: url(https://www.gstatic.com/images/branding/product/1x/google_developers_96dp.png);
+
+  background-position: 16px 50%;
+  background-repeat: no-repeat;
+  background-size: 40px;
+
+  display: inline-block;
+  height: 64px;
+  width: 60px;
+}
+
+.gtag-title {
+  display: inline-block;
+  color: #767676;
+  font-size: 24px;
+  padding-bottom: 60px;
+  vertical-align: middle;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  overflow: hidden;
+  padding: 5px 24px 3px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14),
+      0 2px 1px -1px rgba(0, 0, 0, .12);
+  margin: 32px auto 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 16px 0 20px;
+  width: 906px;
+}
+.subcard {
+  flex: 0 0 100%;
+  left: 0;
+  margin: 0;
+  padding: 0 24px;
+  position: relative;
+  transition: all .4s;
+}
+.subhead {
+  padding: 10px 0 2px;
+}
+
+.card-footer {
+  margin-top: 10px;
+  padding: 0 24px;
+}
+
+.card-footer input {
+  margin-right: 10px;
+}
+
+.card-footer label {
+  margin-right: 10px;
+  display: inline-block;
+}
+.card-footer label input {
+  margin-right: 2px;
+}
+.errors {
+  background: #fbe9e7;
+  border-radius: 2px;
+  color: #db4437;
+  line-height: 40px;
+  margin: -8px 0 8px;
+  padding: 0 16px;
+}
+.small-btn {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  color: #333;
+  cursor: pointer;
+  font-weight: 500;
+  height: 32px;
+  margin-top: 4px;
+  opacity: .27;
+  padding: 0 12px;
+  position: absolute;
+  right: 28px;
+  text-transform: uppercase;
+  transition: all .2s;
+  white-space: nowrap;
+  width: 32px;
+}
+.small-btn:hover {
+  background-color: rgba(0, 0, 0, .12);
+  opacity: .54;
+}
+.small-btn--copy {
+  background-image: url(https://www.gstatic.com/images/icons/material/system/1x/content_copy_black_24dp.png);
+}
+.small-btn--download {
+  background-image: url(https://www.gstatic.com/images/icons/material/system/1x/get_app_black_24dp.png);
+  right: 64px;
+}
+a.btn {
+  background-color: #4285f4;
+  border-radius: 2px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 36px;
+  padding: 0 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .2s;
+  white-space: nowrap;
+}
+a.btn:hover {
+  background-color: #3367d6;
+}
+a.btn--flat {
+  background-color: transparent;
+  color: #333;
+}
+a.btn--flat:hover {
+  background-color: #eee;
+}
+a.btn--right {
+  display: none;
+}
+a.btn--event {
+  background-image: url(https://www.gstatic.com/images/icons/material/system/1x/event_white_24dp.png);
+  background-position: 8px 50%;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  display: inline-block;
+  padding-left: 40px;
+}
+
+a[target="_blank"] {
+  display: inline-block;
+}
+
+a[target="_blank"]:before {
+  content: ' ';
+  display: block;
+  background-image: url(https://www.gstatic.com/images/icons/material/system/1x/open_in_new_grey600_24dp.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 12px;
+  float: right;
+  width: 11px;
+  height: 12px;
+  padding-top: 7px;
+  margin-left: 3px;
+  opacity: .8;
+}
+
+.footer {
+  color: #aaa;
+  padding: 10px 0 2px;
+  text-align: center;
+}
+.footer a {
+  color: #aaa;
+  margin: 0 4px;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/** Styles if animation mode is enabled */
+.animation .subcard-holder {
+  display: flex;
+}
+.animation .card.card--done .subcard {
+  left: -100%;
+}
+.animation .card.card--done a.btn--left {
+  display: none;
+}
+.animation .card.card--done a.btn--right {
+  display: inline-block;
+}
+
+.product-list li,
+.event-list li {
+  display: inline-block;
+  margin: 5px;
+  border: #b3b3b3 1px solid;
+  border-radius: 3px;
+  background-color: #eee;
+}
+
+.product a {
+  text-decoration: none;
+}
+.product .logo,
+.product .icon-container {
+  display: inline-block;
+  width: 200px;
+  height: 44px;
+}
+
+.product .icon-container {
+  text-align: center;
+}
+
+.product .icon-container .plus {
+  padding-top: 10px;
+  font-size: 40px
+}
+
+.product-list li:hover {
+  background-color: #fafafa;
+}
+.event-list a {
+  display: inline-block;
+  width: 175px;
+  text-align: center;
+}
+
+
+.product .logo--event {
+  font-size: 16px;
+  padding-top: 12px;
+  background-size: 26px;
+  background-position: 4px 50%;
+  padding-left: 33px;
+}
+
+.logo {
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 300px;
+  height: 35px;
+
+  text-indent: -99999px;
+}
+
+.logo--event {
+  background-image: url(https://www.gstatic.com/images/icons/material/system/1x/event_googblue_24dp.png);
+  background-size: 30px;
+  background-position: 12px 50%;
+  text-indent: 0;
+  padding-left: 50px;
+  color: #767676;
+}
+
+.logo--event.title {
+  width: inherit;
+}
+
+.logo--analytics {
+  background-image: url(/assets/analytics-logo.png);
+  background-size: 280px;
+  background-position: 10px 50%;
+}
+
+.product .logo--analytics {
+  background-size: 214px;
+  background-position: -14px 50%;
+}
+
+.logo--adwords {
+  background-image: url(//adwords.google.com/cues/2D51CF02EB03C66A903D3D132CE4BCF2.cache.svg);
+  background-size: 240px;
+  background-position: 30px 50%;
+}
+
+.product .logo--adwords {
+  background-size: 180px;
+  background-position: 10px 50%;
+}
+
+.logo--doubleclick {
+  background-size: 240px;
+  background-position: 30px 50%;
+  background-image: url(//www.doubleclickbygoogle.com/static/v1.55/core/img/doubleclick-google-logo-wide.svg);
+}
+
+.product .logo--doubleclick {
+  background-size: 180px;
+  background-position: 10px 50%;
+}
+
+.logo--gtm {
+  background-image: url(/assets/gtm-logo.png);
+  background-size: 320px;
+  background-position: -10px 50%;
+}
+
+.product .logo--gtm {
+  background-size: 220px;
+}
+
+.product--analytics-adwords a {
+  text-indent: 0;
+}
+.product--analytics-adwords .icon {
+  display: inline-block;
+  height: 44px;
+  width: 32px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-size: 34px;
+  text-indent: -99999px;
+}
+
+.analytics-icon {
+  background-image: url(https://www.gstatic.com/images/branding/product/1x/google_analytics_96dp.png);
+}
+.plus {
+  display: inline-block;
+  height: 20px;
+  text-indent: 0;
+  vertical-align: middle;
+  color: gray;
+  font-size: 50px;
+  font-weight: normal;
+  margin: 0 20px;
+}
+.adwords-icon {
+  background-image: url(https://www.gstatic.com/images/branding/product/1x/adwords_96dp.png);
+}
+
+#logWindow {
+  display: none;
+}
+
+#logWindow label {
+  margin-right: 10px;
+}
+
+#eventCode {
+  background-color: #fafafa;
+  border-radius: 2px;
+  border: 1px solid #e0e0e0;
+  display: block;
+  font-size: 12px;
+  max-height: 600px;
+  margin-bottom: 16px;
+  transition: background-color .1s;
+  padding: 10px;
+  width: 100%;
+}
+
+.icon {
+  color: #4285f4;
+}
+
+.card--offscreen {
+  display: none;
+}
+
+.additional-actions {
+  position: absolute;
+  right: 16px;
+  bottom: 5px;
+}
+
+.additional-actions a {
+  text-decoration: none;
+  color: #b3b3b3;
+}
+
+.additional-actions a:visited {
+  color: #b3b3b3;
+}
+
+@media (max-width: 720px) {
+  .title .logo,
+  .title .plus {
+    display: block;
+    width: 100%;
+    background-position: 50%;
+  }
+
+  .title .plus {
+    margin: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .product-list,
+  .event-list {
+    text-align: center;
+  }
+
+  .product-list li,
+  .event-list li,
+  .product-list a,
+  .event-list a {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024){
+  .card {
+    width: 1000px;
+  }
+}
